@@ -9,36 +9,37 @@ const skills = [
   { name: 'Redux-Saga', logo: 'https://cdn.simpleicons.org/reduxsaga/999999' },
   { name: 'Next JS', logo: 'https://cdn.simpleicons.org/nextdotjs/FFFFFF' },
   { name: 'JavaScript', logo: 'https://cdn.simpleicons.org/javascript/F7DF1E' },
-  { name: 'Material UI', logo: 'https://cdn.simpleicons.org/mui/007FFF' }
+  { name: 'Material UI', logo: 'https://cdn.simpleicons.org/mui/007FFF' },
 ];
 ---
 
-<div class="skills-spotlight card" aria-live="polite">
-  <h2>Skill Spotlight</h2>
-  <p>Core technologies in rotation</p>
-  <div class="logo-stage">
-    <img id="skill-logo" src={skills[0].logo} alt={skills[0].name} width="92" height="92" />
-    <span id="skill-name">{skills[0].name}</span>
+<section class="skills-spotlight card" aria-labelledby="skills-spotlight-title">
+  <div class="section-heading">
+    <h2 id="skills-spotlight-title">Skill Spotlight</h2>
   </div>
-</div>
 
-<script define:vars={{ skills }} is:inline>
-  const logo = document.getElementById('skill-logo');
-  const name = document.getElementById('skill-name');
-  let index = 0;
+  <div class="skills-carousel" aria-live="polite">
+    <img id="skill-logo" src={skills[0].logo} alt={skills[0].name} />
+    <p id="skill-name">{skills[0].name}</p>
+  </div>
 
-  const rotate = () => {
-    index = (index + 1) % skills.length;
-    const next = skills[index];
-    logo.classList.add('is-fading');
+  <script define:vars={{ skills }} is:inline>
+    const logo = document.getElementById('skill-logo');
+    const name = document.getElementById('skill-name');
+    let index = 0;
 
-    setTimeout(() => {
-      logo.src = next.logo;
-      logo.alt = next.name;
-      name.textContent = next.name;
-      logo.classList.remove('is-fading');
-    }, 220);
-  };
+    const rotate = () => {
+      index = (index + 1) % skills.length;
+      const next = skills[index];
+      logo.classList.add('is-fading');
+      setTimeout(() => {
+        logo.src = next.logo;
+        logo.alt = next.name;
+        name.textContent = next.name;
+        logo.classList.remove('is-fading');
+      }, 220);
+    };
 
-  setInterval(rotate, 1800);
-</script>
+    setInterval(rotate, 1800);
+  </script>
+</section>
