@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Section from '../components/Section.astro';
+import SkillsCarousel from '../components/SkillsCarousel.astro';
+
+const experiences = [
+  {
+    company: 'Aptean',
+    role: 'Software Engineer, Module Lead',
+    highlights: [
+      'Led module delivery for enterprise workflows with quality and release ownership.',
+      'Improved reliability and maintainability across cloud-hosted services.'
+    ]
+  },
+  {
+    company: 'EagleView Technologies',
+    role: 'Software Engineer',
+    highlights: [
+      'Built scalable backend and UI features for geospatial and business-facing platforms.',
+      'Collaborated across product and engineering to deliver iterative enhancements.'
+    ]
+  },
+  {
+    company: 'LTIMindtree India Pvt Ltd.',
+    role: 'Software Engineer',
+    highlights: [
+      'Contributed to full-stack product features with ReactJS and service-layer integrations.',
+      'Supported modernization efforts and sprint-based delivery practices.'
+    ]
+  },
+  {
+    company: 'ITISH Business Solutions',
+    role: 'Software Engineer',
+    highlights: [
+      'Delivered web application modules and reusable front-end components.',
+      'Worked on production fixes and feature implementation with rapid turnaround.'
+    ]
+  }
+];
+
+const projects = [
+  'Cloud-first product enhancements with AWS, Kubernetes, and PostgreSQL.',
+  'Full-stack web modules using ReactJS, Redux, Redux-Saga, and Next JS.',
+  'UI development projects using HTML, CSS, JavaScript, and Material UI.'
+];
+---
+
+<BaseLayout>
+  <main class="container">
+    <section class="hero card">
+      <div>
+        <p class="eyebrow">Profile</p>
+        <h1>Ayan Banerjee</h1>
+        <p class="title">Software Engineer, Module Lead</p>
+        <p class="summary">
+          Software engineer focused on dependable product delivery, scalable application design,
+          and cross-functional execution from idea to production.
+        </p>
+      </div>
+      <div class="contact">
+        <p><strong>Location:</strong> India</p>
+        <p><strong>Email:</strong> Available on request</p>
+        <p><strong>Phone:</strong> Available on request</p>
+        <p>
+          <a href="https://www.linkedin.com/in/ayan-banerjee" target="_blank" rel="noreferrer">LinkedIn</a>
+          ·
+          <a href="https://bold.pro/my/ayan-banerjee" target="_blank" rel="noreferrer">Bold.pro</a>
+        </p>
+      </div>
+    </section>
+
+    <SkillsCarousel />
+
+    <Section id="summary" title="Professional Summary">
+      <p>
+        Results-driven engineer with experience building and leading modules across backend, cloud,
+        and frontend layers. Strong focus on reliability, performance, and pragmatic delivery.
+      </p>
+    </Section>
+
+    <Section id="skills" title="Skills">
+      <ul class="pill-list">
+        <li>Go</li>
+        <li>AWS</li>
+        <li>Kubernetes</li>
+        <li>PostgreSQL</li>
+        <li>ReactJS</li>
+        <li>Redux</li>
+        <li>Redux-Saga</li>
+        <li>Next JS</li>
+        <li>HTML/CSS/JavaScript</li>
+        <li>Material UI</li>
+      </ul>
+    </Section>
+
+    <Section id="experience" title="Experience">
+      <div class="stack">
+        {experiences.map((item) => (
+          <article>
+            <h3>{item.company}</h3>
+            <p class="subtle">{item.role}</p>
+            <ul>
+              {item.highlights.map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </Section>
+
+    <Section id="education" title="Education">
+      <p>Bachelor's degree in Engineering (details available on request)</p>
+    </Section>
+
+    <Section id="projects" title="Projects">
+      <ul>
+        {projects.map((project) => (
+          <li>{project}</li>
+        ))}
+      </ul>
+    </Section>
+  </main>
+</BaseLayout>

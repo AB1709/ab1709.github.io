@@ -1,0 +1,27 @@
+{
+  "name": "ab1709.github.io",
+  "version": "1.0.0",
+  "description": "Ayan Banerjee's Profile - Achievements, KB, Skills",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AB1709/ab1709.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AB1709/ab1709.github.io/issues"
+  },
+  "homepage": "https://github.com/AB1709/ab1709.github.io#readme",
+  "dependencies": {
+    "astro": "^7.0.0"
+  },
+  "private": true,
+  "type": "module"
+}
