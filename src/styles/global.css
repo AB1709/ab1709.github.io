@@ -1,0 +1,139 @@
+:root {
+  color-scheme: dark;
+  --bg: #090c16;
+  --bg-accent: radial-gradient(circle at top left, #202c62 0%, transparent 55%);
+  --card: rgba(13, 18, 36, 0.88);
+  --text: #eff1f8;
+  --muted: #aeb8d5;
+  --brand: #7bb6ff;
+  --brand-soft: #7bb6ff33;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, 'Segoe UI', Roboto, system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg-accent), var(--bg);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--brand);
+}
+
+.container {
+  width: min(1100px, 92vw);
+  margin: 2rem auto 3rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #ffffff1a;
+  border-radius: 20px;
+  padding: 1.2rem;
+  backdrop-filter: blur(5px);
+}
+
+.hero {
+  display: grid;
+  gap: 1rem;
+}
+
+.eyebrow {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
+}
+
+h1 {
+  margin: 0.35rem 0;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+.title {
+  margin: 0;
+  color: #d6def9;
+}
+
+.summary,
+.subtle,
+.skills-spotlight p {
+  color: var(--muted);
+}
+
+.section h2,
+.skills-spotlight h2 {
+  margin: 0 0 0.8rem;
+}
+
+.pill-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.pill-list li {
+  border: 1px solid var(--brand-soft);
+  background: #7bb6ff1f;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+}
+
+.stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.stack article h3 {
+  margin: 0;
+}
+
+.stack article ul {
+  margin: 0.55rem 0 0;
+}
+
+.logo-stage {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 100px;
+}
+
+#skill-logo {
+  background: #ffffff08;
+  border: 1px solid #ffffff22;
+  border-radius: 24px;
+  padding: 0.7rem;
+  transition: opacity 0.22s ease-in-out, transform 0.22s ease-in-out;
+}
+
+#skill-logo.is-fading {
+  opacity: 0.2;
+  transform: scale(0.9);
+}
+
+#skill-name {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+}
+
+@media (min-width: 800px) {
+  .hero {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: end;
+  }
+
+  .container {
+    gap: 1.2rem;
+  }
+}
