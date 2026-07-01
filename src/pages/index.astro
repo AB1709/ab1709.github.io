@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Section from '../components/Section.astro';
 import SkillsCarousel from '../components/SkillsCarousel.astro';
 
+const email = import.meta.env.PUBLIC_EMAIL;
+const phone = import.meta.env.PUBLIC_PHONE;
 const experiences = [
   {
     company: 'Aptean',
@@ -59,10 +61,10 @@ const projects = [
       </div>
       <div class="contact">
         <p><strong>Location:</strong> India</p>
-        <p><strong>Email:</strong> Available on request</p>
-        <p><strong>Phone:</strong> Available on request</p>
+        <p><strong>Email:</strong><a href={`mailto:${email}`}>{email}</a></p>
+        <p><strong>Phone:</strong>{phone}</p>
         <p>
-          <a href="https://www.linkedin.com/in/ayan-banerjee" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="www.linkedin.com/in/ayan-banerjee-139525100" target="_blank" rel="noreferrer">LinkedIn</a>
           ·
           <a href="https://bold.pro/my/ayan-banerjee" target="_blank" rel="noreferrer">Bold.pro</a>
         </p>

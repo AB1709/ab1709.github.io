@@ -15,7 +15,7 @@
 
 body {
   margin: 0;
-  font-family: Inter, 'Segoe UI', Roboto, system-ui, sans-serif;
+  font-family: Inter, "Segoe UI", Roboto, system-ui, sans-serif;
   color: var(--text);
   background: var(--bg-accent), var(--bg);
   min-height: 100vh;
@@ -109,12 +109,23 @@ h1 {
   min-height: 100px;
 }
 
+.skills-carousel {
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  text-align: center;
+}
+
 #skill-logo {
+  width: 300px; /* Sets the width boundary */
+  height: 200px; /* Sets the height boundary */
   background: #ffffff08;
   border: 1px solid #ffffff22;
   border-radius: 24px;
   padding: 0.7rem;
-  transition: opacity 0.22s ease-in-out, transform 0.22s ease-in-out;
+  transition:
+    opacity 0.22s ease-in-out,
+    transform 0.22s ease-in-out;
 }
 
 #skill-logo.is-fading {

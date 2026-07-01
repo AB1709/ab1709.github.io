@@ -1,7 +1,7 @@
 ---
 const skills = [
   { name: 'Go', logo: 'https://cdn.simpleicons.org/go/00ADD8' },
-  { name: 'AWS', logo: 'https://cdn.simpleicons.org/amazonaws/FF9900' },
+  { name: 'AWS', logo: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/aws.svg' },
   { name: 'Kubernetes', logo: 'https://cdn.simpleicons.org/kubernetes/326CE5' },
   { name: 'PostgreSQL', logo: 'https://cdn.simpleicons.org/postgresql/4169E1' },
   { name: 'ReactJS', logo: 'https://cdn.simpleicons.org/react/61DAFB' },
@@ -19,8 +19,10 @@ const skills = [
   </div>
 
   <div class="skills-carousel" aria-live="polite">
-    <img id="skill-logo" src={skills[0].logo} alt={skills[0].name} />
-    <p id="skill-name">{skills[0].name}</p>
+    <div class="skills-content">
+      <img id="skill-logo" src={skills[0].logo} alt={skills[0].name} />
+      <p id="skill-name">{skills[0].name}</p>
+    </div>
   </div>
 
   <script define:vars={{ skills }} is:inline>
@@ -37,7 +39,7 @@ const skills = [
         logo.alt = next.name;
         name.textContent = next.name;
         logo.classList.remove('is-fading');
-      }, 220);
+      }, 300);
     };
 
     setInterval(rotate, 1800);
